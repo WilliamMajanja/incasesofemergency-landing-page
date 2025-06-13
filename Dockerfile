@@ -1,5 +1,5 @@
 # Stage 1: Build the React application
-FROM node:20-alpine as build-stage
+FROM node:20-alpine AS build-stage
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ RUN npm run build
 # If you use yarn, use RUN yarn build
 
 # Stage 2: Serve the application with Nginx
-FROM nginx:alpine as production-stage
+FROM nginx:alpine AS production-stage
 
 # Remove default Nginx configuration
 RUN rm /etc/nginx/conf.d/default.conf
